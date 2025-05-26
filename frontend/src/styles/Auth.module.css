@@ -1,0 +1,83 @@
+.authContainer {
+  width: 100vw;
+  height: 100vh;
+  margin-top: 8vh;
+  display: flex !important;
+  justify-content: center;
+  background: url("/bg.mp4") !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+}
+.authContainer a {
+  text-decoration: none;
+  color: darkorchid;
+  cursor: pointer;
+  opacity: 0.8;
+}
+a:hover {
+  opacity: 1.2;
+}
+.bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 40%;
+  font-size: 2rem;
+}
+
+.box {
+  background-color: rgb(13, 11, 11);
+  height: fit-content;
+  width: 27vw;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem;
+  margin: 1rem;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputFields {
+  padding-right: 2rem;
+  margin: 1rem;
+}
+.inputsRequired input {
+  color: white;
+}
+
+.inputsRequired :global(.MuiFormLabel-root) {
+  color: gray;
+  padding: 1rem;
+}
+
+.inputsRequired :global(.MuiOutlinedInput-notchedOutline) {
+  border-color: white;
+}
+
+.inputsRequired
+  :global(.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline) {
+  border-color: gray;
+}
+
+.inputsRequired :global(.MuiInputBase-root) {
+  margin: 1rem;
+}
+
+.submitBtn {
+  margin: 1rem;
+}

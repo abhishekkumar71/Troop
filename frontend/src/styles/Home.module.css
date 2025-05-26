@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.navBar {
+  display: flex;
+  background-color: #242424;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  padding: 0 2rem;
+  z-index: 100;
+}
+
+.navHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.buttons {
+  display: flex;
+  gap: 2rem;
+  width: 20rem;
+}
+.buttons button {
+  color: whitesmoke;
+}
+button:hover {
+  opacity: 0.5;
+}
+.homeContainer {
+  top: 0;
+  overflow: visible;
+  margin: 0;
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0;
+  display: inline;
+  background-image: url("/bgPr2.png");
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.joinMeet {
+  height: 90vh;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcomeCard {
+  background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea) !important; 
+  padding: 2rem;
+  max-width: fit-content;
+  margin: auto;
+  animation: popOut 500ms ease-out 100ms 1 forwards;
+}
+@keyframes popOut {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.joinBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 40;
+  margin: auto;
+}
+.joinBlock input {
+  color: black;
+}
