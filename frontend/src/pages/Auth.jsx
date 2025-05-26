@@ -69,7 +69,7 @@ export default function Authentication() {
     });
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/signup",
+        "https://troop-c7o5.onrender.com/signup",
         {
           name: fullname,
           username: username,
@@ -113,7 +113,7 @@ export default function Authentication() {
     });
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/signin",
+        "https://troop-c7o5.onrender.com/signin",
         {
           username: username,
           password: password,

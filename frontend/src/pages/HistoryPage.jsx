@@ -17,7 +17,7 @@ export default function HistoryPage() {
   const navigate = useNavigate();
   const getHistory = async () => {
     try {
-      let request = await axios.get("http://localhost:8080/getActivity", {
+      let request = await axios.get("https://troop-c7o5.onrender.com/getActivity", {
         params: {
           token: localStorage.getItem("token"),
         },

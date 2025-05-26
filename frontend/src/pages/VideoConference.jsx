@@ -20,7 +20,7 @@ import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Typography } from "@mui/material";
 
-const server_Url = "http://localhost:8080";
+const server_Url = "https://troop-c7o5.onrender.com";
 let connections = {};
 let makingOffer = {};
 let ignoreOffer = {};

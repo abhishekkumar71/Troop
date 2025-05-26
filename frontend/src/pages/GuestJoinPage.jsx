@@ -28,7 +28,7 @@ export default function GuestJoinPage() {
     }
 
     try {
-      const { data } = await axios.post("http://localhost:8080/joinMeeting", {
+      const { data } = await axios.post("https://troop-c7o5.onrender.com/joinMeeting", {
         meeting_code: meetingCode,
       });
 

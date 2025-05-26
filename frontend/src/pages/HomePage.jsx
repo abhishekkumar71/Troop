@@ -31,7 +31,7 @@ function HomePage() {
       return;
     }
     try {
-      const { data } = await axios.post("http://localhost:8080/joinMeeting", {
+      const { data } = await axios.post("https://troop-c7o5.onrender.com/joinMeeting", {
         meeting_code: meetingCode,
       });
       const { success, message } = data;
@@ -53,7 +53,7 @@ function HomePage() {
   const handleCreateMeeting = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/createMeeting",
+        "https://troop-c7o5.onrender.com/createMeeting",
         {},
         {
           params: { token: localStorage.getItem("token") },
@@ -74,7 +74,7 @@ function HomePage() {
   };
   const addToHistory = async (meetingCode) => {
     try {
-      let request = await axios.post("http://localhost:8080/addToActivity", {
+      let request = await axios.post("https://troop-c7o5.onrender.com/addToActivity", {
         token: localStorage.getItem("token"),
         meeting_code: meetingCode,
       });
