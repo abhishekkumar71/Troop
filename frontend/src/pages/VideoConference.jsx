@@ -16,7 +16,7 @@ import EmojiPicker from "emoji-picker-react";
 import MoodOutlinedIcon from "@mui/icons-material/MoodOutlined";
 import { io } from "socket.io-client";
 import styles from "../styles/VC.module.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Typography } from "@mui/material";
 
@@ -53,6 +53,7 @@ export default function VideoConference() {
   const room = meetingCode;
   const location = useLocation();
   const count = videos.length + 1;
+  const navigate=useNavigate();
   useEffect(() => {
     getPermissions();
   }, []);
@@ -370,7 +371,7 @@ export default function VideoConference() {
     } catch (e) {
       console.log(e);
     }
-    isGuest ? (window.location.href = "/") : (window.location.href = "/home");
+    isGuest ? (navigate("/")) : (navigate("/home"));
   };
   const handleScreenShare = () => {
     console.log(screen);
