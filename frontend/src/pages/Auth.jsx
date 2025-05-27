@@ -121,17 +121,13 @@ export default function Authentication() {
         { withCredentials: true }
       );
 
-      console.log(data);
       const token = data.token;
       localStorage.setItem("token", token);
-      console.log(localStorage);
       const { success, message } = data;
       if (success) {
         handleSuccess(message);
-        console.log(message);
       } else {
         handleFailure(message);
-        console.log(message);
       }
     } catch (e) {
       console.log(e);
