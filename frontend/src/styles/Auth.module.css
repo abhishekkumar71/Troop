@@ -81,3 +81,13 @@ a:hover {
 .submitBtn {
   margin: 1rem;
 }
+@media (max-width:768px){
+  .box{
+    width: 66vw;
+  }
+}
+@media (max-width:300px){
+  .box{
+    width: 50vw;
+  }
+}
