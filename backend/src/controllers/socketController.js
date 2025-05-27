@@ -8,7 +8,7 @@ let timeOnline = {};
 module.exports.SocketConnection = (server) => {
   const io = new Server(server, {
     cors: {
-      origin: "*",
+    origin: ["http://localhost:5173", "https://troop-1.onrender.com"],
       methods: ["GET", "POST"],
       allowedHeaders: ["*"],
       credentials: true,
