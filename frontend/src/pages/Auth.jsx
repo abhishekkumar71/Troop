@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
@@ -133,25 +133,25 @@ export default function Authentication() {
       console.log(e);
       handleFailure("something went wrong please try again!!");
     }
-  };  
+  };
   const handleToggle = () => {
     setToggle((prev) => !prev);
   };
-  const handleClick=()=>{
+  const handleClick = () => {
     navigate("/");
-  }
+  };
   useEffect(() => {
-      const handleResize = () => {
-        setMenu(window.innerWidth <= 768);
-        if (window.innerWidth > 768) setToggle(false);
-      };
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    const handleResize = () => {
+      setMenu(window.innerWidth <= 768);
+      if (window.innerWidth > 768) setToggle(false);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <>
-    <nav className="nav">
+      <nav className="nav">
         <div className="navHeader" onClick={handleClick}>
           <img
             src="/Logo.png"
@@ -175,23 +175,20 @@ export default function Authentication() {
               />
             </IconButton>
             {toggle ? (
-              <div className="navLinks">
+              <div className="navLinks" style={{marginTop:"5rem"}}>
                 <Link to="/guest">Join as Guest</Link>
-              
               </div>
             ) : (
               <></>
             )}
           </>
         ) : (
-          <div className="navLinks" style={{justifyContent:"center"}}>
+          <div className="navLinks" style={{ justifyContent: "center" }}>
             <Link to="/guest">Join as Guest</Link>
-       
           </div>
         )}
       </nav>
       <div className={styles.authContainer}>
-        
         <video autoPlay muted loop playsInline className={styles.bgVideo}>
           <source src="bg.mp4" type="video/mp4" />
         </video>
@@ -324,15 +321,15 @@ export default function Authentication() {
                   Submit
                 </Button>
               </div>
-              <p style={{color:"whitesmoke"}}>
+              <p style={{ color: "whitesmoke" }}>
                 Don't have an account?Click&nbsp;
                 <a onClick={handleSignupBtn}>SignUp</a>
               </p>
             </form>
           )}
         </Box>
-       
-      </div> <Footer/>
+      </div>{" "}
+      <Footer />
     </>
   );
 }

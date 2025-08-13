@@ -8,7 +8,7 @@ body {
   overflow-y: scroll;
 }
 
- a {
+a {
   text-decoration: none;
   color: white;
   padding: 0.5rem;
@@ -36,8 +36,8 @@ a:hover {
   align-items: center;
   gap: 1rem;
 }
-img:hover{
-cursor: pointer;
+img:hover {
+  cursor: pointer;
 }
 
 .navLinks {
@@ -52,7 +52,6 @@ cursor: pointer;
   scroll-snap-align: center;
 }
 
-/* Each full-screen slide */
 .slide {
   height: 90vh;
   width: 100vw;
@@ -65,7 +64,15 @@ cursor: pointer;
   background-position: center;
   background-attachment: fixed;
 }
-
+.steps {
+  display: "flex";
+  flex-direction: "column";
+  width: "50vw";
+  flex-wrap: "wrap";
+  align-content: "flex-start";
+  align-items: "flex-start";
+  font-size: "1.2rem";
+}
 .hero {
   width: 90%;
   display: flex;
@@ -93,7 +100,7 @@ cursor: pointer;
   color: #5f5757;
 }
 .working {
-   width: 90%;
+  width: 90%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -103,7 +110,7 @@ cursor: pointer;
   color: white;
 }
 .features {
-     width: 90%;
+  width: 90%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -115,7 +122,7 @@ cursor: pointer;
 .features p {
   font-size: 1.3rem;
 }
-.lines{
+.lines {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -167,37 +174,83 @@ cursor: pointer;
     width: 80%;
     height: 60%;
   }
- 
-  img{
+
+  img {
     width: 45vw;
     height: 25vh;
   }
 
-  .working{
+  .working {
     width: 85%;
     height: 60%;
   }
-  .features{
+  .features {
     width: 80%;
     height: 60%;
   }
 }
 
-@media (max-width:597px) {
-  .heroImg{
-    display: none;
+@media (max-width: 597px) {
+  .hero {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
   }
-  .featuresImg{
-    display: none;
+  .heroImg {
+    width: 100%;
   }
-  .workingImg{
-    display: none !important;
+  .heroImg img {
+    width: 100%;
+    object-fit: contain;
   }
-  .navHeader img{
+  .working {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+  .workingImg {
+    width: 100%;
+  }
+  .workingImg img {
+    width: 100%;
+    object-fit: contain;
+  }
+  .features {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+  .featuresImg {
+    width: 100%;
+  }
+  .featuresImg img {
+    width: 100%;
+    object-fit: contain;
+  }
+  .lines {
+    width: 100%;
+  }
+  .lines p {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  .featuresImg {
+    margin-top: 1rem;
+  }
+
+  .navHeader img {
     height: 2rem !important;
     width: 2rem !important;
   }
-  h2{
+  .navLinks {
+    position: absolute;
+    margin-right: 5rem;
+    margin-top: none;
+  }
+  h2 {
     font-size: 1.5rem !important;
   }
 }

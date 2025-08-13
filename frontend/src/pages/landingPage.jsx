@@ -127,13 +127,7 @@ export default function LandingPage() {
             <div
               className="steps"
               style={{
-                display: "flex",
-                flexDirection: "column",
-                width:"50vw",
-                flexWrap: "wrap",
-                alignContent: "flex-start",
-                alignItems: "flex-start",
-                fontSize: "1.2rem",
+              
               }} data-aos="fade-up-left" data-aos-delay="300"
             >
              <h2 className="heading">How it works? 🤔</h2>
