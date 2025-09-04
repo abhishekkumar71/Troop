@@ -34,7 +34,7 @@ Live Demo: https://troop-1.onrender.com
 
 ##Screenshots
 **Landing Page**
-![Landing Page](./screenshotsLandingPage.jpeg)
+![Landing Page](./screenshots/LandingPage.jpeg)
 
 **Home Page**
 ![Home Page](./screenshots/HomePage.jpeg)
