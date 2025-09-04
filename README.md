@@ -34,19 +34,19 @@ Live Demo: https://troop-1.onrender.com
 
 ##Screenshots
 **Landing Page**
-![LandingPage](./screenshots/LandingPage)
+![Landing Page](./screenshotsLandingPage.jpeg)
 
 **Home Page**
-![HomePage](./screenshots/HomePage)
+![Home Page](./screenshots/HomePage.jpeg)
 
 **Join Meeting**
-![JoinMeeting](./screenshots/JoinMeeting)
+![Join Meeting](./screenshots/JoinMeeting.jpeg)
 
 **Video Call**
-![videoCall](./screenshots/videoCall)
+![video Call](./screenshots/videoCall.jpeg)
 
 **Screen Sharing**
-![screenSharing](./screenshots/screenSharing)
+![screenSharing](./screenshots/screenSharing.jpeg)
 
 **Live Chat**
-![liveChat](./screenshots/liveChat)
+![liveChat](./screenshots/liveChat.jpeg)
