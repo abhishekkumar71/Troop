@@ -9,6 +9,7 @@ import TextField from "@mui/material/TextField";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import CircularProgress from "@mui/material/CircularProgress";
 import { useSnackbar } from "notistack";
 import Footer from "./Footer";
 import styles from "../styles/Auth.module.css";
@@ -28,6 +29,8 @@ export default function Authentication() {
   const [passwordValidation, setPasswordValidation] = useState(false);
   const [menu, setMenu] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const [loadingSignup, setLoadingSignup] = useState(false);
+  const [loadingSignin, setLoadingSignin] = useState(false);
 
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
@@ -67,6 +70,7 @@ export default function Authentication() {
         fieldSetters[key](false);
       }
     });
+    setLoadingSignup(true);
     try {
       const { data } = await axios.post(
         "https://troop-c7o5.onrender.com/signup",
@@ -79,21 +83,18 @@ export default function Authentication() {
         { withCredentials: true }
       );
 
-      console.log(data);
       const token = data.token;
       localStorage.setItem("token", token);
       const { success, message } = data;
       if (success) {
         handleSuccess(message);
-        console.log(message);
       } else {
         handleFailure(message);
-        console.log(message);
       }
     } catch (e) {
-      console.log(e);
       handleFailure("something went wrong please try again!!");
     }
+    setLoadingSignup(false);
   };
 
   const handleSubmitSignin = async (event) => {
@@ -111,6 +112,7 @@ export default function Authentication() {
         fieldSetters[key](false);
       }
     });
+    setLoadingSignin(true);
     try {
       const { data } = await axios.post(
         "https://troop-c7o5.onrender.com/signin",
@@ -130,9 +132,9 @@ export default function Authentication() {
         handleFailure(message);
       }
     } catch (e) {
-      console.log(e);
       handleFailure("something went wrong please try again!!");
     }
+    setLoadingSignin(false);
   };
   const handleToggle = () => {
     setToggle((prev) => !prev);
@@ -175,7 +177,7 @@ export default function Authentication() {
               />
             </IconButton>
             {toggle ? (
-              <div className="navLinks" style={{marginTop:"5rem"}}>
+              <div className="navLinks" style={{ marginTop: "5rem" }}>
                 <Link to="/guest">Join as Guest</Link>
               </div>
             ) : (
@@ -265,8 +267,17 @@ export default function Authentication() {
                 />
               </div>
               <div className={styles.submitBtn}>
-                <Button variant="contained" fullWidth type="submit">
-                  Submit
+                <Button
+                  variant="contained"
+                  fullWidth
+                  type="submit"
+                  disabled={loadingSignup}
+                >
+                  {loadingSignup ? (
+                    <CircularProgress size={24} sx={{ color: "white" }} />
+                  ) : (
+                    "Submit"
+                  )}
                 </Button>
               </div>
 
@@ -317,8 +328,17 @@ export default function Authentication() {
                 />
               </div>
               <div className={styles.submitBtn}>
-                <Button variant="contained" fullWidth type="submit">
-                  Submit
+                <Button
+                  variant="contained"
+                  fullWidth
+                  type="submit"
+                  disabled={loadingSignin}
+                >
+                  {loadingSignin ? (
+                    <CircularProgress size={24} sx={{ color: "white" }} />
+                  ) : (
+                    "Submit"
+                  )}
                 </Button>
               </div>
               <p style={{ color: "whitesmoke" }}>
